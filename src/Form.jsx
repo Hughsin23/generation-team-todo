@@ -49,5 +49,14 @@ const Form = ({ toDoID }) => {
 
   }
 
+  // take the ID and remove using filter to remove only that task.
+  const handleRemove = (toDoID) => {
+    const updatedToDoList = toDoList.filter((task) => task.id !== toDoID)
+    setToDoList(updatedToDoList)
+  }
+
+  const handleToDoStatusChange = (toDoID, newToDoStatus) => {
+
+  }
 
 }
