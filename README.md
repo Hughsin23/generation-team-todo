@@ -11,11 +11,10 @@ Welcome to our React ToDo application! This project is a collaborative effort to
 
 ## Table of Contents
 
-- [Wireframe](#wireframe)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributors](#contributors)
-- [License](#license)
+* [Wireframe](#wireframe)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributors](#contributors)
 
 ## Technology Used
 
@@ -26,7 +25,7 @@ Welcome to our React ToDo application! This project is a collaborative effort to
 
 ## Wireframe
 
-![Wireframe](url_to_wireframe_image)
+![Wireframe](./to-do-app-wireframe.jpg)
 
 ## Installation
 
@@ -56,35 +55,38 @@ Our ToDo application allows you to manage tasks efficiently. Here's how you can 
 
 ### Add a new task:
 
-* 
+* Fill in the required details, including ToDo name, ToDo description, ToDo due date, ToDo assigned member, and ToDo status.
+* Click on the "Add ToDo" button to add the task to your to-do list.
 
 ### Edit a task:
 
-* 
+* For quick status updates, click on the "In progress", "Completed" or "In Review" button to update the task.
+* To modify the task details in a form, click on "Edit task" button.
+* Click on the "Create" button to save the task.
 
 ### Remove a task:
 
-* 
+* Click on the "Remove todo" button to delete the task.
+
 ### Sort tasks:
 
-* 
+* Use the sorting options to arrange tasks by status.
 
 ## Contributors
 
 __Hugh Sinclair__
-[GitHub](https://github.com/Hughsin23 "Hugh's GitHub") / [LinkedIn](https://www.linkedin.com/in/hugh-sinclair-dev/ "Hugh's LinkedIn") / <hughsin23@gmail.com
+[GitHub](https://github.com/Hughsin23 "Hugh's GitHub") / [LinkedIn](https://www.linkedin.com/in/hugh-sinclair-dev/ "Hugh's LinkedIn") / [Email](<hughsin23@gmail.com>)
 
 __Praseen Shamakura__
-[GitHub](https://github.com/Frogdust "Praseen's GitHub") / [LinkedIn](https://www.linkedin.com/in/chau-bao-nguyen-phan/ "Praseen's LinkedIn") / <spraseen@gmail.com>
+[GitHub](https://github.com/PraseenS "Praseen's GitHub") / [Email](<spraseen@gmail.com>)
 
 __Shihua (Sylvia) XIE__
-[GitHub](https://github.com/RainInApril "Shihua's GitHub") / [LinkedIn](https://www.linkedin.com/in/chau-bao-nguyen-phan/ "Shihua's LinkedIn") / <sylvia501628@gmail.com>
+[GitHub](https://github.com/shihuaxie "Shihua's GitHub") / [LinkedIn](https://www.linkedin.com/in/shihua-sylvia-xie-136282197/ "Shihua's LinkedIn") / [Email](<sylvia501628@gmail.com>)
 
 __Tracey Ngo__
-[GitHub](https://github.com/NTracey "Tracey's GitHub") / [LinkedIn](https://www.linkedin.com/in/tracey-ngo/ "Tracey's LinkedIn") / <traceyngo4@gmail.com>
+[GitHub](https://github.com/NTracey "Tracey's GitHub") / [LinkedIn](https://www.linkedin.com/in/tracey-ngo/ "Tracey's LinkedIn") / [Email](<traceyngo4@gmail.com>)
 
 __Liam Allen__
-[GitHub](https://github.com/NTracey "Liam's GitHub") / [LinkedIn](https://www.linkedin.com/in/tracey-ngo/ "Liam's LinkedIn") / <liamleeallen1998@hotmail.com>
+[Email](<liamleeallen1998@hotmail.com>)
 
-#### Our instructor/mentor - __Elias Matta__ <elias.matta@generation.org>
-
+#### Our instructor/mentor - __Elias Matta__ [Email](<elias.matta@generation.org>)
