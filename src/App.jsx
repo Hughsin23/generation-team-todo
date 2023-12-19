@@ -9,7 +9,7 @@ import TypeQuote from './api';
 function App() {
   return (
     <div className="App">
-
+      <Form />
     </div>
   );
 }

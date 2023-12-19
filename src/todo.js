@@ -1,9 +1,9 @@
 const todoShape = {
-  todoName: '',
-  todoDescription: '',
+  name: '',
+  description: '',
   dueDate: '',
   assignedMember: '',
-  todoStatus: 'in progress',
+  status: 'in progress',
 }
 
 export default todoShape

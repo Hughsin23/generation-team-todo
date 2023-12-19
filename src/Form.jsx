@@ -20,9 +20,9 @@ const Form = ({ toDoID }) => {
 
   const handleChange = (e) => {
     // grab the name and value of the toDo from the form, destructuring like this neatens things up, but I can put it in the old way it people like the look of that better.
-    const { toDoName, toDoValue } = e.target
+    const { name, toDoValue } = e.target
 
-    setToDo((prevtoDo) => ({ ...prevtoDo, [toDoName]: toDoValue }))
+    setToDo((prevtoDo) => ({ ...prevtoDo, [name]: toDoValue }))
   }
 
   const handleSubmit = (e) => {
@@ -67,11 +67,11 @@ const Form = ({ toDoID }) => {
 
     return sortedToDoList.map((task) => {
       <div className="todo-container">
-        <h2 className="todo-name">{task.toDoName}</h2>
-        <h2 className="todo-description">{task.toDoDescription}</h2>
+        <h2 className="todo-name">{task.name}</h2>
+        <h2 className="todo-description">{task.description}</h2>
         <h2 className="todo-dueDate">{task.dueDate}</h2>
         <h2 className="todo-assignedMember">{task.assignedMember}</h2>
-        <h2 className="todo-status">{task.toDoStatus}</h2>
+        <h2 className="todo-status">{task.status}</h2>
         <button className="in-progress" onClick={() => handleToDoStatusChange(task.id, 'in-progress')}></button>
         <button className="completed" onClick={() => handleToDoStatusChange(task.id, 'completed')}></button>
         <button className="review" onClick={() => handleToDoStatusChange(task.id, 'review')}></button>
@@ -83,33 +83,50 @@ const Form = ({ toDoID }) => {
 
   return (
     <>
-      <form action="" id="todo-form">
+      <form onSubmit={handleSubmit} id="todo-form">
         <label for="name">Todo name: </label>
-        <input type="text" name="name" value={toDo.toDoName} onChange={handleChange} required />
+        <input type="text" name="name" value={toDo.name} onChange={handleChange} required />
         <br />
 
 
         <label for="description">Todo description: </label>
-        <input type="text" name='description' />
+        <input type="text" name='description' maxLength="250" value={toDo.description} onChange={handleChange} required />
         <br />
 
         <label for="due-date">Todo due date: </label>
-        <input type="text" name='due-date' />
+        <input type="date" name='due-date' value={toDo.dueDate} onChange={handleChange} required />
         <br />
 
         <label for="member">Todo assignmed member: </label>
-        <input type="text" name='member' />
+        <select name="member" value={toDo.assignedMember} onChange={handleChange} required>
+          <option value="Hugh">Hugh</option>
+          <option value="Praseen">Praseen</option>
+          <option value="Sylvia">Sylvia</option>
+          <option value="Tracey">Tracey</option>
+          <option value="Liam">Liam</option>
+        </select>
         <br />
 
         <label for="status">Todo status:</label>
-        <select name="status">
+        <select name="status" value={toDo.status} onChange={handleChange} required>
           <option value="in-progress">In Progress</option>
           <option value="completed">Completed</option>
           <option value="review">Up for Review</option>
         </select>
+
+        <button type="submit">{toDoID ? 'Edit ToDo' : 'Add ToDo'}</button>
       </form>
 
+      {errorMessage && <section>!!!!{errorMessage}!!!!</section>}
+
+
+      <div className="toDo-list">
+        <h1>Todo: </h1>
+        {toDoList.length > 0 ? renderToDoList() : <h3>No tasks yet, try adding some!</h3>}
+      </div>
     </>
   )
 
 }
+
+export default Form
