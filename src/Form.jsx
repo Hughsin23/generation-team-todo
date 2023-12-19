@@ -9,18 +9,19 @@ const Form = ({ toDoID }) => {
 
   // have a useeffect to grab the stored toDos 
   useEffect(() => {
-    const storedToDos = JSON.parse(localStorage.getItem('toDoList')) || []
+    const storedToDos = JSON.parse(localStorage.getItem('toDoList'))
     console.log(storedToDos)
     setToDoList(storedToDos)
   }, [])
 
   // have this useEffect to fire off when the toDo list changes, so we get an updated list in our local storage.
   useEffect(() => {
-    localStorage.setItem('toDoList', JSON.stringify(toDoList))
+    setTimeout(localStorage.setItem('toDoList', JSON.stringify(toDoList)), 100)
   }, [toDoList])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(e.target)
 
     // Limit character count for description to 250 characters
     if (name === 'description' && value.length > 250) {
@@ -78,8 +79,8 @@ const Form = ({ toDoID }) => {
   const renderToDoList = () => {
     const sortedToDoList = toDoList.sort((a, b) => a.status.localeCompare(b.status))
 
-    return sortedToDoList.map((task) =>
-      <div className="todo-container">
+    return sortedToDoList.map((task, index) =>
+      <div className="todo-container" key={Date.now() + index}>
         <h2 className="todo-name">{task.name}</h2>
         <h2 className="todo-description">{task.description}</h2>
         <h2 className="todo-dueDate">{task.dueDate}</h2>
