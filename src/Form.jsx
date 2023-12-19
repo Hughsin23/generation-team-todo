@@ -9,8 +9,8 @@ const Form = ({ toDoID }) => {
 
   // have a useeffect to grab the stored toDos 
   useEffect(() => {
-    const storedtoDos = JSON.parse(localStorage.getItem('toDoList')) || []
-    setToDoList(storedtoDos)
+    const storedToDos = JSON.parse(localStorage.getItem('toDoList')) || []
+    setToDoList(storedToDos)
   }, [])
 
   // have this useEffect to fire off when the toDo list changes, so we get an updated list in our local storage.
@@ -19,11 +19,21 @@ const Form = ({ toDoID }) => {
   }, [toDoList])
 
   const handleChange = (e) => {
-    // grab the name and value of the toDo from the form, destructuring like this neatens things up, but I can put it in the old way it people like the look of that better.
-    const { name, toDoValue } = e.target
+    const { name, value } = e.target;
 
-    setToDo((prevtoDo) => ({ ...prevtoDo, [name]: toDoValue }))
-  }
+    // Limit character count for description to 250 characters
+    if (name === 'description' && value.length > 250) {
+      return;
+    }
+
+    // For select elements, get the selected value
+    const selectedValue =
+      e.target.type === 'select-one'
+        ? e.target.options[e.target.selectedIndex].value
+        : value;
+
+    setToDo((prevToDo) => ({ ...prevToDo, [name]: selectedValue }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -55,6 +65,7 @@ const Form = ({ toDoID }) => {
     setToDoList(updatedToDoList)
   }
 
+  // take the status and update it with the new one, or just leave it.
   const handleToDoStatusChange = (toDoID, newToDoStatus) => {
     const updatedToDoList = toDoList.map((task) => {
       return task.id === toDoID ? { ...task, status: newToDoStatus } : task
@@ -62,22 +73,24 @@ const Form = ({ toDoID }) => {
     setToDoList(updatedToDoList)
   }
 
+  // render the list 
   const renderToDoList = () => {
     const sortedToDoList = toDoList.sort((a, b) => a.status.localeCompare(b.status))
 
-    return sortedToDoList.map((task) => {
+    return sortedToDoList.map((task) =>
       <div className="todo-container">
         <h2 className="todo-name">{task.name}</h2>
         <h2 className="todo-description">{task.description}</h2>
         <h2 className="todo-dueDate">{task.dueDate}</h2>
         <h2 className="todo-assignedMember">{task.assignedMember}</h2>
         <h2 className="todo-status">{task.status}</h2>
-        <button className="in-progress" onClick={() => handleToDoStatusChange(task.id, 'in-progress')}></button>
-        <button className="completed" onClick={() => handleToDoStatusChange(task.id, 'completed')}></button>
-        <button className="review" onClick={() => handleToDoStatusChange(task.id, 'review')}></button>
-        <button className="remove" onClick={() => handleRemove(task.id)}></button>
+        <button className="in-progress" onClick={() => handleToDoStatusChange(task.id, 'in-progress')}>In progress</button>
+        <button className="completed" onClick={() => handleToDoStatusChange(task.id, 'completed')}>Completed</button>
+        <button className="review" onClick={() => handleToDoStatusChange(task.id, 'review')}>In Review</button>
+        <button className="remove" onClick={() => handleRemove(task.id)}>Remove todo</button>
+        <button className="edit">Edit task</button>
       </div>
-    })
+    )
   }
 
 
@@ -93,12 +106,12 @@ const Form = ({ toDoID }) => {
         <input type="text" name='description' maxLength="250" value={toDo.description} onChange={handleChange} required />
         <br />
 
-        <label for="due-date">Todo due date: </label>
-        <input type="date" name='due-date' value={toDo.dueDate} onChange={handleChange} required />
+        <label for="dueDate">Todo due date: </label>
+        <input type="date" name='dueDate' value={toDo.dueDate} onChange={handleChange} required />
         <br />
 
-        <label for="member">Todo assignmed member: </label>
-        <select name="member" value={toDo.assignedMember} onChange={handleChange} required>
+        <label for="assignedMember">Todo assignmed member: </label>
+        <select name="assignedMember" value={toDo.assignedMember} onChange={handleChange} required>
           <option value="Hugh">Hugh</option>
           <option value="Praseen">Praseen</option>
           <option value="Sylvia">Sylvia</option>
