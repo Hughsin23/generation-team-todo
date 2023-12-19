@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# React ToDo Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![GitHub stars](https://img.shields.io/github/stars/Hughsin23/generation-team-todo)](https://github.com/Hughsin23/generation-team-todo/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Hughsin23/generation-team-todo)](https://github.com/Hughsin23/generation-team-todo/network)
+[![GitHub issues](https://img.shields.io/github/issues/Hughsin23/generation-team-todo)](https://github.com/Hughsin23/generation-team-todo/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/Hughsin23/generation-team-todo)](https://github.com/Hughsin23/generation-team-todo/graphs/contributors)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Welcome to our React ToDo application! This project is a collaborative effort to create a reactive and user-friendly ToDo application using React. The goal is to provide users with a seamless experience for managing tasks, including the ability to edit, sort, and remove tasks from the to-do list.
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* [Wireframe](#wireframe)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributors](#contributors)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technology Used
 
-### `npm test`
+![HTML5 Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3 Badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![React Badge](https://img.shields.io/badge/React-%2320232a?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Wireframe
 
-### `npm run build`
+![Wireframe](./to-do-app-wireframe.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get started with our ToDo application, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Hughsin23/generation-team-todo.git
+   ```
+2. Navigate to the project directory:
+    ```sh
+    cd generation-team-todo
+    ```
+3. Install dependencies:
+    ```sh
+    npm install
+    ```
+4. Start the development server:
+    ```sh
+    npm start
+    ```
+Now you're all set up to use our ToDo application locally!
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Our ToDo application allows you to manage tasks efficiently. Here's how you can use it:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Add a new task:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Fill in the required details, including ToDo name, ToDo description, ToDo due date, ToDo assigned member, and ToDo status.
+* Click on the "Add ToDo" button to add the task to your to-do list.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Edit a task:
 
-## Learn More
+* For quick status updates, click on the "In progress", "Completed" or "In Review" button to update the task.
+* To modify the task details in a form, click on "Edit task" button.
+* Click on the "Create" button to save the task.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Remove a task:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Click on the "Remove todo" button to delete the task.
 
-### Code Splitting
+### Sort tasks:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Use the sorting options to arrange tasks by status.
 
-### Analyzing the Bundle Size
+## Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+__Hugh Sinclair__
+[GitHub](https://github.com/Hughsin23 "Hugh's GitHub") / [LinkedIn](https://www.linkedin.com/in/hugh-sinclair-dev/ "Hugh's LinkedIn") / [Email](<hughsin23@gmail.com>)
 
-### Making a Progressive Web App
+__Praseen Shamakura__
+[GitHub](https://github.com/PraseenS "Praseen's GitHub") / [Email](<spraseen@gmail.com>)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+__Shihua (Sylvia) XIE__
+[GitHub](https://github.com/shihuaxie "Shihua's GitHub") / [LinkedIn](https://www.linkedin.com/in/shihua-sylvia-xie-136282197/ "Shihua's LinkedIn") / [Email](<sylvia501628@gmail.com>)
 
-### Advanced Configuration
+__Tracey Ngo__
+[GitHub](https://github.com/NTracey "Tracey's GitHub") / [LinkedIn](https://www.linkedin.com/in/tracey-ngo/ "Tracey's LinkedIn") / [Email](<traceyngo4@gmail.com>)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+__Liam Allen__
+[Email](<liamleeallen1998@hotmail.com>)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Our instructor/mentor - __Elias Matta__ [Email](<elias.matta@generation.org>)
