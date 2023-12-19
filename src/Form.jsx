@@ -10,6 +10,7 @@ const Form = ({ toDoID }) => {
   // have a useeffect to grab the stored toDos 
   useEffect(() => {
     const storedToDos = JSON.parse(localStorage.getItem('toDoList')) || []
+    console.log(storedToDos)
     setToDoList(storedToDos)
   }, [])
 
