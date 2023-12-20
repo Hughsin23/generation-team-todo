@@ -7,6 +7,8 @@ const Form = () => {
   const [errorMessage, setErrorMessage] = useState('')
   const [isEditing, setIsEditing] = useState(false)
   const [toDoID, setToDoID] = useState(null)
+  const [statusMessage, setStatusMessage] = useState('');
+
 
   // this useeffect runs once on load, and will grab our stored todo lists if it exists, or just an empty array if it doesn't
   useEffect(() => {
@@ -19,6 +21,13 @@ const Form = () => {
     localStorage.setItem('toDoList', JSON.stringify(toDoList))
   }, [toDoList])
 
+  useEffect(() => {
+    if (statusMessage) {
+        const timer = setTimeout(() => setStatusMessage(''), 3000); // Clear after 3 seconds
+        return () => clearTimeout(timer);
+    }
+}, [statusMessage]);
+// Clear the Status Message
   const handleChange = (e) => {
     // this is destructuring the name and value elements from the inputs, if it's a bit confusing I can change it back to the old way but it should be okay for now.
     const { name, value } = e.target
@@ -75,10 +84,34 @@ const Form = () => {
   // this maps through our list, and when it finds the task with the ID equal to the one clicked, it'll change it's status to whichever button was clicked ('in progress', 'completed' and 'in review')
   const handleToDoStatusChange = (toDoID, newToDoStatus) => {
     const updatedToDoList = toDoList.map((task) =>
-      task.id === toDoID ? { ...task, status: newToDoStatus } : task
-    )
-    setToDoList(updatedToDoList)
-  }
+        task.id === toDoID ? { ...task, status: newToDoStatus } : task
+    );
+    setToDoList(updatedToDoList);
+
+    let message = '';
+    switch (newToDoStatus) {
+        case 'in-progress':
+            message = 'Task set to In Progress';
+            break;
+        case 'completed':
+            message = 'Task completed!';
+            break;
+        case 'review':
+            message = 'Task is now in Review';
+            break;
+        case 'remove':
+            message = 'Task is removed';
+            break;
+        case 'edit':
+            message = 'You can edit the task';
+            break;
+        default:
+            message = '';
+            break;
+    }
+    setStatusMessage(message);
+}
+
 
   // grab the task we want to edit, and set the current todo to that task. Make sure editing mode is enabled through state, and the ID it set to this current todo's ID.
   const handleEdit = (toDoID) => {
@@ -150,6 +183,13 @@ const Form = () => {
       {errorMessage && (
         <section style={{ color: 'red' }}>{errorMessage}</section>
       )}
+
+        {statusMessage && (
+            <div className={`status-message status-${statusMessage.toLowerCase().replace(/\s+/g, '-')}`}>
+            {statusMessage}
+        </div>
+        
+        )}
 
       <div className="toDo-list">
         <h1>Todo: </h1>

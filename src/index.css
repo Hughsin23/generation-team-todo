@@ -1,13 +1,242 @@
+/* Base Styles */
 body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 20px;
+  color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1,
+h2,
+h3 {
+  color: #333;
+}
+
+/* Utility Classes */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Form Styles */
+#todo-form {
+  background-color: #a0c4ff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+#todo-form input,
+#todo-form select,
+#todo-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: 100%;
+}
+
+#todo-form button {
+  background-color: #caffbf;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#todo-form button:hover {
+  background-color: #b9e8a4;
+}
+
+/* Error Message Style */
+section {
+  color: red;
+  margin: 10px 0;
+}
+
+/* Todo List Styles */
+.toDo-list {
+  background-color: #9bf6ff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.todo-container {
+  background-color: #fdffb6;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.todo-container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles in Todo List */
+/* Enhanced Button Styles */
+.todo-container button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8em;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo-container button::after {
+  content: "";
+  background: rgba(255, 255, 255, 0.2);
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.todo-container button:active::after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.todo-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific Styles for Each Button Type */
+.todo-container .completed {
+  background-color: #caffbf;
+}
+
+.todo-container .in-progress {
+  background-color: #fdffb6;
+}
+
+.todo-container .review {
+  background-color: #ffc6ff;
+}
+
+.todo-container .remove,
+.todo-container .edit {
+  background-color: #ffadad;
+}
+
+.todo-container .remove:hover,
+.todo-container .edit:hover {
+  background-color: #ff7b7b;
+}
+
+.todo-container .completed:hover {
+  background-color: #aee6a4;
+}
+
+.todo-container .in-progress:hover {
+  background-color: #f3ff8c;
+}
+
+.todo-container .review:hover {
+  background-color: #ffdcff;
+}
+
+/* Status Text Styles */
+.status-message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #f5576c; /* White text color for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1);
+  animation: fadeIn 0.5s ease, float 2s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Specific styles based on the type of status message */
+.status-task-set-to-in-progress {
+  background: linear-gradient(
+    135deg,
+    #4facfe,
+    #00f2fe
+  ); /* Blue gradient for in-progress */
+}
+
+.status-task-completed {
+  background: linear-gradient(
+    135deg,
+    #43e97b,
+    #38f9d7
+  ); /* Green gradient for completed */
+}
+
+.status-task-is-now-in-review {
+  background: linear-gradient(
+    135deg,
+    #fa709a,
+    #fee140
+  ); /* Pink-yellow gradient for review */
+}
+
+.status-task-is-removed {
+  background: linear-gradient(
+    135deg,
+    #f5576c,
+    #f093fb
+  ); /* Red-purple gradient for removed */
+}
+
+.status-you-can-edit-the-task {
+  background: linear-gradient(
+    135deg,
+    #667eea,
+    #764ba2
+  ); /* Indigo-violet gradient for edit */
+}
+
+/* Hover effect for status message */
+.status-message:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
