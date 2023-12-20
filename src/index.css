@@ -5,6 +5,8 @@ body {
   margin: 0;
   padding: 20px;
   color: #333;
+  max-width: 1000px;
+  margin: auto;
 }
 
 h1,
@@ -38,14 +40,18 @@ h3 {
   margin-bottom: 30px;
 }
 
+/* Form Styles */
 #todo-form input,
 #todo-form select,
 #todo-form button {
+  box-sizing: border-box;
   padding: 10px;
   border: none;
   border-radius: 5px;
   margin: 5px 0;
   width: 100%;
+  text-align: center;
+  /* Center align text in inputs */
 }
 
 #todo-form button {
@@ -88,7 +94,7 @@ section {
 /* Button Styles in Todo List */
 /* Enhanced Button Styles */
 .todo-container button {
-  margin-right: 5px;
+  margin: 5px;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
@@ -241,14 +247,66 @@ section {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Form Styles */
-#todo-form input,
-#todo-form select,
-#todo-form button {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  margin: 5px 0;
-  width: 100%;
-  text-align: center; /* Center align text in inputs */
+
+
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  #todo-form,
+  .toDo-list {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .todo-container {
+    padding: 10px;
+  }
+
+  #todo-form input,
+  #todo-form select,
+  #todo-form button {
+    font-size: 0.9em;
+  }
+
+  .flex,
+  .flex-column {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .todo-container button {
+    margin: 5px 0;
+  }
 }
+
+@media only screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  #todo-form,
+  .toDo-list {
+    padding: 10px;
+    margin: 5px 0;
+  }
+
+  .todo-container {
+    padding: 8px;
+  }
+
+  #todo-form input,
+  #todo-form select,
+  #todo-form button {
+    font-size: 0.8em;
+  }
+
+  .status-message {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .todo-container button {
+    padding: 4px 8px;
+  }
+}
+

@@ -127,7 +127,11 @@ const Form = () => {
       // stole this code from stackoverflow, but essentially localecompare is checking whether the status is in alphabetical order, maybe try to sort it by "in progress" then "complete" then "in review"? for logic? but leaving for now.
       a.status.localeCompare(b.status)
     )
-
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
     return sortedToDoList.map((task, index) => (
       <div className="todo-container" key={Date.now() + index}>
         <h2 className="todo-name">{task.name}</h2>
@@ -139,7 +143,7 @@ const Form = () => {
         <button className="completed" onClick={() => handleToDoStatusChange(task.id, 'completed')}>Completed</button>
         <button className="review" onClick={() => handleToDoStatusChange(task.id, 'review')}>In Review</button>
         <button className="remove" onClick={() => handleRemove(task.id)}>Remove todo</button>
-        <button className="edit" onClick={() => handleEdit(task.id)}>Edit task</button>
+        <button className="edit" onMouseUp={topFunction} onClick={() => handleEdit(task.id)}>Edit task</button>
       </div>
     ))
   }

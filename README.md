@@ -29,7 +29,7 @@ You can find our deployment of the project [Here](https://hughsin23.github.io/ge
 
 ## Wireframe
 
-![Wireframe](./to-do-app-wireframe.jpg)
+![Wireframe](./to-do-app-wireframe.png)
 
 ## Installation
 
@@ -60,17 +60,17 @@ Our ToDo application allows you to manage tasks efficiently. Here's how you can 
 ### Add a new task:
 
 * Fill in the required details, including ToDo name, ToDo description, ToDo due date, ToDo assigned member, and ToDo status.
-* Click on the "Add ToDo" button to add the task to your to-do list.
+* Click "Add ToDo" button to add the task to your to-do list.
 
 ### Edit a task:
 
-* For quick status updates, click on the "In progress", "Completed" or "In Review" button to update the task.
-* To modify the task details in a form, click on "Edit task" button.
-* Click on the "Create" button to save the task.
+* For quick status updates, click "In progress", "Completed" or "In Review" button to update the task.
+* To modify the task details in a form, click "Edit task" button.
+* Click "Edit ToDo" button to save the task.
 
 ### Remove a task:
 
-* Click on the "Remove todo" button to delete the task.
+* Click "Remove todo" button to delete the task.
 
 ### Sort tasks:
 
