@@ -41,16 +41,18 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    // if there are some fields not filled in (once again, redundency for the HTML required not working, might be redundant but it's nice to have)
+    // if there are some fields not filled in (once again, redundency for the HTML required not working, might be redundant but it's nice to have, it caught an error when I didn't have the select box have a default value for team members)
     if (!toDo.name || !toDo.description || !toDo.dueDate || !toDo.assignedMember) {
       setErrorMessage('Please fill in all the fields!')
       return
     }
 
+    // check if we're editing a task, if we are, check if the task id matches the ID in state, if it does, replace that task with the current todo state (edited version)
     if (isEditing) {
       const updatedTodoList = toDoList.map((task) =>
         task.id === toDoID ? toDo : task
       )
+      //set the list, then return all the others to defaults so that we can edit properly next time.
       setToDoList(updatedTodoList)
       setIsEditing(false)
       setToDoID(null)
