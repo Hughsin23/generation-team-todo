@@ -58,6 +58,7 @@ const Form = () => {
       setToDoID(null)
       setToDo({ ...toDoShape })
     } else {
+      // if it's not editing, we're creating a new todo~
       const newToDo = { ...toDo, id: Date.now() }
       setToDoList((prevToDoList) => [...prevToDoList, newToDo])
       setToDo({ ...toDoShape })
@@ -71,6 +72,7 @@ const Form = () => {
     setToDoList(updatedToDoList)
   }
 
+  // this maps through our list, and when it finds the task with the ID equal to the one clicked, it'll change it's status to whichever button was clicked ('in progress', 'completed' and 'in review')
   const handleToDoStatusChange = (toDoID, newToDoStatus) => {
     const updatedToDoList = toDoList.map((task) =>
       task.id === toDoID ? { ...task, status: newToDoStatus } : task
@@ -78,6 +80,7 @@ const Form = () => {
     setToDoList(updatedToDoList)
   }
 
+  // grab the task we want to edit, and set the current todo to that task. Make sure editing mode is enabled through state, and the ID it set to this current todo's ID.
   const handleEdit = (toDoID) => {
     const taskToEdit = toDoList.find((task) => task.id === toDoID)
     setToDo(taskToEdit)
@@ -85,8 +88,10 @@ const Form = () => {
     setToDoID(toDoID)
   }
 
+
   const renderToDoList = () => {
     const sortedToDoList = toDoList.sort((a, b) =>
+      // stole this code from stackoverflow, but essentially localecompare is checking whether the status is in alphabetical order, maybe try to sort it by "in progress" then "complete" then "in review"? for logic? but leaving for now.
       a.status.localeCompare(b.status)
     )
 
