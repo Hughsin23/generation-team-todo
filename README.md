@@ -80,6 +80,11 @@ Our ToDo application allows you to manage tasks efficiently. Here's how you can 
 * Getting the local storage working was annoying, as I (Hugh) forgot that strictmode for Dev will run useEffect twice, and thus was wiping my storage, massive shoutout to Liam and Tracey for helping me remember that.
 * Getting the edit button to update the tasks, took a few iterations. I think the one implemented isn't the best, but it's working for now. I'd like to go back and get it to render the form back in a modal for creation and editing.
 
+## Future changes
+* Have the create task and edit task bring up our form in a modal, rather than having it render on the main page.
+* Have each ToDo take up the size of a post-it, rather than an entire column across the page. Grid or flexbox will probably be the solution here
+* Improve input box layout, looking less like a series of input boxes, more pleasant inputs.  
+
 ## Contributors
 
 __Hugh Sinclair__
