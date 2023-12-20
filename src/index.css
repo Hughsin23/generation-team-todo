@@ -240,3 +240,15 @@ section {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
+/* Form Styles */
+#todo-form input,
+#todo-form select,
+#todo-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: 100%;
+  text-align: center; /* Center align text in inputs */
+}
