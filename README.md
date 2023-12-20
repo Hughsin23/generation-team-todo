@@ -9,6 +9,10 @@
 
 Welcome to our React ToDo application! This project is a collaborative effort to create a reactive and user-friendly ToDo application using React. The goal is to provide users with a seamless experience for managing tasks, including the ability to edit, sort, and remove tasks from the to-do list.
 
+## Live page
+
+You can find our deployment of the project [Here](https://hughsin23.github.io/generation-team-todo/).
+
 ## Table of Contents
 
 * [Wireframe](#wireframe)
@@ -71,6 +75,10 @@ Our ToDo application allows you to manage tasks efficiently. Here's how you can 
 ### Sort tasks:
 
 * Use the sorting options to arrange tasks by status.
+
+## Main issues
+* Getting the local storage working was annoying, as I (Hugh) forgot that strictmode for Dev will run useEffect twice, and thus was wiping my storage, massive shoutout to Liam and Tracey for helping me remember that.
+* Getting the edit button to update the tasks, took a few iterations. I think the one implemented isn't the best, but it's working for now. I'd like to go back and get it to render the form back in a modal for creation and editing.
 
 ## Contributors
 
