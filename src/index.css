@@ -248,3 +248,65 @@ section {
 }
 
 
+
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  #todo-form,
+  .toDo-list {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .todo-container {
+    padding: 10px;
+  }
+
+  #todo-form input,
+  #todo-form select,
+  #todo-form button {
+    font-size: 0.9em;
+  }
+
+  .flex,
+  .flex-column {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .todo-container button {
+    margin: 5px 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  #todo-form,
+  .toDo-list {
+    padding: 10px;
+    margin: 5px 0;
+  }
+
+  .todo-container {
+    padding: 8px;
+  }
+
+  #todo-form input,
+  #todo-form select,
+  #todo-form button {
+    font-size: 0.8em;
+  }
+
+  .status-message {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .todo-container button {
+    padding: 4px 8px;
+  }
+}
+
